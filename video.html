@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plate Count – Know how many guests will really come</title>
+<style>
+:root{--bg:#fdf5f8;--card:#fff;--ink:#2b1230;--mute:#6f5a74;--line:#ecd9e2;--pink:#b4195a;--gold:#f2a900;--teal:#0e7c7b;--red:#c0392b;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#1b0f1f;--card:#2a1930;--ink:#f6e9f1;--mute:#c4aacb;--line:#43294b;--pink:#ee5c98;--gold:#f7be3a;--teal:#3fc5c2;--red:#ff7a6b;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.5;padding-bottom:env(safe-area-inset-bottom,0)}
+.w{max-width:480px;margin:0 auto;padding:18px 16px 30px}
+.brand{font-weight:800;color:var(--pink);text-align:center}
+h1{font-size:clamp(24px,6.5vw,32px);line-height:1.2;text-align:center;margin:6px 0 16px}
+#v{position:relative;height:470px;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#b4195a,#6d0f38);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.sc{position:absolute;inset:0;animation:in .5s ease}
+@keyframes in{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+.tc{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;height:100%}
+.bigt{font-size:76px;font-weight:800;line-height:1}
+.tc h2{font-size:26px;margin:6px 0}
+.tc p{font-size:19px;margin:8px 0 0;opacity:.95}
+.phone{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:210px;height:320px;border:7px solid #fff;border-radius:26px;background:var(--bg);color:var(--ink);overflow:hidden;font-size:13px}
+.in{position:absolute;inset:0;padding:12px 11px;display:flex;flex-direction:column;gap:8px}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px 14px;text-align:center;background:rgba(0,0,0,.25)}
+.cap b{display:block;font-size:19px}.cap span{font-size:14px;opacity:.92}
+.r{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:7px 9px;display:flex;justify-content:space-between;animation:in .5s ease backwards}
+.r:nth-child(3){animation-delay:.5s}.r:nth-child(4){animation-delay:1s}.r:nth-child(5){animation-delay:1.5s}
+.pill{font-size:11px;font-weight:700;color:#fff;border-radius:99px;padding:2px 8px}
+.bub{background:#dcf8c6;color:#1a2a1a;border-radius:12px 12px 12px 2px;padding:9px 10px}
+.lk{color:#0b66c3;text-decoration:underline}
+.b{border-radius:9px;padding:10px;text-align:center;font-weight:700;background:var(--pink);color:#fff}
+.b.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.q{font-weight:800;font-size:15px}
+.n{font-size:50px;font-weight:800;text-align:center;line-height:1;margin:22px 0 4px}
+.hero{background:var(--pink);color:#fff;border-radius:12px;padding:12px;text-align:center}
+.hero b{font-size:44px;display:block;line-height:1}
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.t{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;padding:5px 7px;font-size:11px}
+.t b{display:block;font-size:18px}
+.sr{border:1px solid var(--line);border-radius:8px;padding:7px 9px;color:var(--mute);background:var(--card)}
+.ck{font-size:60px;text-align:center;color:var(--teal);line-height:1;margin-top:20px}
+.ctl{display:flex;align-items:center;gap:10px;margin:12px 0 0}
+.pp{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px;cursor:pointer;font-size:14px;white-space:nowrap}
+#sk{flex:1;accent-color:#b4195a;min-width:0}
+#tm{font-size:13px;color:var(--mute);white-space:nowrap}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.contact{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}
+.contact h2{margin:0 0 4px;font-size:24px}
+.contact p{margin:0 0 6px;color:var(--mute)}
+.num{font-size:28px;font-weight:800;margin:6px 0 14px;letter-spacing:.5px}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:12px;font-size:17px;color:#fff;background:var(--pink)}
+.btn.w2{background:#128c4a}
+.fd{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+.fd div{flex:1 1 160px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.fd small{display:block;color:var(--pink);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.fd b{font-size:18px}
+footer{text-align:center;color:var(--mute);font-size:14px;margin-top:20px}
+@media(prefers-reduced-motion:reduce){.sc,.r{animation:none}}
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="brand">🍛 Plate Count</div>
+  <h1>Know how many guests will really come.</h1>
+
+  <div id="v" role="img" aria-label="One-minute video showing how the wedding RSVP app works"></div>
+  <div class="ctl">
+    <button class="pp" id="pp">⏸ Pause</button>
+    <input id="sk" type="range" min="0" value="0" step="100" aria-label="Video position">
+    <span id="tm">0:00 / 0:54</span>
+  </div>
+
+  <div class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Want this for your family’s wedding? Call or message us.</p>
+    <div class="fd">
+      <div><small>Founder</small><b>Yalamaddi Manikanta</b></div>
+      <div><small>Co-founder</small><b>Tholla Goutham</b></div>
+    </div>
+    <div class="num">+91 62812 38268</div>
+    <div class="row">
+      <a class="btn" href="tel:+916281238268">📞 Call</a>
+      <a class="btn w2" href="https://wa.me/916281238268?text=Hi%2C%20I%20saw%20your%20wedding%20RSVP%20app.%20Please%20tell%20me%20more." target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </div>
+  <footer>Made in India for Indian weddings.</footer>
+</div>
+
+<script>
+var S=[
+{t:'tc',big:'400',h:'relatives invited',p:'Everyone says: “Of course we’ll come!”'},
+{t:'tc',big:'280',h:'actually came',p:'120 plates were wasted. That is real money.'},
+{t:'tc',big:'🍛',h:'Plate Count',p:'RSVP on WhatsApp. Know the real number.'},
+{c:'The host adds the guest list',s:'Names and WhatsApp numbers, one family per line',h:'<div class="q">Guest list</div><div class="r"><span>Sharma Uncle</span><span>98••••01</span></div><div class="r"><span>Priya Aunty</span><span>98••••03</span></div><div class="r"><span>Kiran Mama</span><span>98••••04</span></div><div class="b" style="margin-top:auto">Add guests</div>'},
+{c:'One tap sends the invite',s:'The WhatsApp message is already written',h:'<div class="q">WhatsApp</div><div class="bub">Namaste Sharma Uncle! You are invited to Anjali weds Rohan. Please tap this link to reply (20 seconds):<br><span class="lk">yoursite/r?t=k3x9a2</span></div><div class="b" style="margin-top:auto;background:var(--teal)">Send</div>'},
+{c:'Every guest gets a private link',s:'No app to install. No login. Just tap.',h:'<div class="q">Wedding RSVP</div><div class="r"><span>Anjali weds Rohan</span></div><p style="margin:4px 0;color:var(--mute)">Opens from WhatsApp in one tap, on any phone.</p><div class="ck">👆</div>'},
+{c:'Page 1: Will you come?',s:'Big buttons, easy for uncles and aunties',h:'<div class="q">Namaste Sharma Uncle, will you come?</div><div class="b">Yes, I’ll be there</div><div class="b o">Maybe</div><div class="b o">Sorry, can’t come</div>'},
+{c:'Page 2: How many people?',s:'Counting everyone in the family',h:'<div class="q">How many are coming?</div><div class="n">4</div><div class="b" style="margin-top:auto">Next</div>'},
+{c:'Page 3: Veg or non-veg?',s:'The caterer gets the exact split',h:'<div class="q">How many eat veg?</div><div class="n">3</div><p style="text-align:center;margin:0">3 veg and 1 non-veg</p><div class="b" style="margin-top:auto">Next</div>'},
+{c:'Page 4: Arrival time',s:'Morning, afternoon, evening or exact time',h:'<div class="q">When will you arrive?</div><div class="b o">Morning</div><div class="b o">Afternoon</div><div class="b">Evening</div>'},
+{c:'The reply is saved',s:'Plans changed? They just open the link again',h:'<div class="q">Thank you!</div><div class="ck">✓</div><div class="r"><span>Your reply is saved. The family can see it now.</span></div>'},
+{c:'The host sees the real number',s:'Example numbers, updated as guests reply',h:'<div class="hero"><b>268</b>plates for the caterer</div><div class="tl"><div class="t" style="--c:var(--teal)"><b>245</b>Coming</div><div class="t" style="--c:var(--gold)"><b>40</b>Maybe</div><div class="t" style="--c:var(--red)"><b>60</b>Not coming</div><div class="t" style="--c:var(--mute)"><b>35</b>Waiting</div></div>'},
+{c:'See who has not replied yet',s:'Search by name or filter by status',h:'<div class="q">Guest list</div><div class="sr">🔍 Search name or number</div><div class="r"><span>Neha & family</span><span class="pill" style="background:var(--mute)">Waiting</span></div><div class="r"><span>Anita Bua</span><span class="pill" style="background:var(--mute)">Waiting</span></div><div class="r"><span>Ravi Uncle</span><span class="pill" style="background:var(--red)">Not coming</span></div>'},
+{t:'tc',big:'✔',h:'Tell the caterer the real number.',p:'Want it for your wedding? Contact us below.'}
+];
+var T=4200,TOTAL=S.length*T,e=0,last=0,cur=-1,playing=true;
+var v=document.getElementById('v'),sk=document.getElementById('sk'),tm=document.getElementById('tm'),pp=document.getElementById('pp');
+sk.max=TOTAL-1;
+function fmt(ms){var s=Math.floor(ms/1000);return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(k){cur=k;var x=S[k];
+ if(x.t==='tc'){v.innerHTML='<div class="sc tc"><div class="bigt">'+x.big+'</div><h2>'+x.h+'</h2><p>'+x.p+'</p></div>'}
+ else{v.innerHTML='<div class="sc"><div class="phone"><div class="in">'+x.h+'</div></div><div class="cap"><b>'+x.c+'</b><span>'+x.s+'</span></div></div>'}}
+function tick(now){var dt=now-last;last=now;
+ if(playing){e+=dt;if(e>=TOTAL)e=0}
+ var k=Math.min(S.length-1,Math.floor(e/T));if(k!==cur)show(k);
+ sk.value=e;tm.textContent=fmt(e)+' / '+fmt(TOTAL);requestAnimationFrame(tick)}
+sk.oninput=function(){e=+sk.value};
+pp.onclick=function(){playing=!playing;pp.textContent=playing?'⏸ Pause':'▶ Play'};
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){playing=false;pp.textContent='▶ Play'}
+requestAnimationFrame(function(n){last=n;tick(n)});
+</script>
+</body>
+</html>
