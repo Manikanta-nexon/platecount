@@ -76,7 +76,7 @@ footer{text-align:center;color:var(--mute);font-size:14px;margin-top:20px}
 @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
 .bub{animation:pop .6s .3s both}.ck{animation:pop .6s .2s both}
 .b.tap{position:relative}.b.tap::after{content:'';position:absolute;right:16px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:rgba(255,255,255,.85);animation:pulse 1.2s 1s infinite}
-.sh{color:#ffd54a;animation:shake .5s 1.9s both}
+.sh{color:#ffd54a;animation:shake .5s 3s both}
 .tc h2{font-weight:800}
 @media(prefers-reduced-motion:reduce){.sc,.r,#v,.bub,.ck,.sh,.b.tap::after{animation:none}}
 </style>
@@ -95,7 +95,7 @@ footer{text-align:center;color:var(--mute);font-size:14px;margin-top:20px}
   <div class="ctl">
     <button class="pp" id="pp">⏸ Pause</button>
     <input id="sk" type="range" min="0" value="0" step="100" aria-label="Video position">
-    <span id="tm">0:00 / 0:57</span>
+    <span id="tm">0:00 / 1:40</span>
   </div>
 
   <div class="contact" id="contact">
@@ -116,23 +116,25 @@ footer{text-align:center;color:var(--mute);font-size:14px;margin-top:20px}
 
 <script>
 var S=[
-{t:'tc',big:'0',d:' data-from="0" data-to="400"',h:'guests invited 🎉',p:'Everyone says: “Of course we’ll come!”'},
-{t:'tc',big:'400',cls:' sh',d:' data-from="400" data-to="280" data-ms="1800"',h:'actually came',p:'120 plates were wasted. 💸'},
+{t:'tc',big:'0',d:' data-from="0" data-to="400" data-ms="2800"',h:'guests invited 🎉',p:'Everyone says: “Of course we’ll come!”'},
+{t:'tc',big:'400',cls:' sh',d:' data-from="400" data-to="280" data-ms="2800"',h:'actually came',p:'120 plates were wasted. 💸'},
 {t:'tc',big:'🤔',h:'What if you knew the real number before the function?',p:''},
 {t:'tc',big:'🍛',h:'Plate Count',p:'Know who is coming. Before they come.'},
 {c:'The host adds the guest list',s:'Names and WhatsApp numbers, one family per line',h:'<div class="q">Guest list</div><div class="r"><span>Sharma Uncle</span><span>98••••01</span></div><div class="r"><span>Priya Aunty</span><span>98••••03</span></div><div class="r"><span>Kiran Mama</span><span>98••••04</span></div><div class="b tap" style="margin-top:auto">Add guests</div>'},
 {c:'One tap sends the invite on WhatsApp',s:'The message is already written',h:'<div class="q">WhatsApp</div><div class="bub">Namaste Sharma Uncle! You are invited to Anjali weds Rohan. Please tap this link to reply (20 seconds):<br><span class="lk">yoursite/r?t=k3x9a2</span></div><div class="b tap" style="margin-top:auto;background:var(--teal)">Send</div>'},
 {c:'Every guest gets a private link',s:'No app to install. No login. Just tap.',h:'<div class="q">Wedding RSVP</div><div class="r"><span>Anjali weds Rohan</span></div><p style="margin:4px 0;color:var(--mute)">Opens from WhatsApp in one tap, on any phone.</p><div class="ck">👆</div>'},
 {c:'Page 1: Will you come?',s:'Big buttons, easy for uncles and aunties',h:'<div class="q">Namaste Sharma Uncle, will you come?</div><div class="b tap">Yes, I’ll be there</div><div class="b o">Maybe</div><div class="b o">Sorry, can’t come</div>'},
-{c:'Page 2: How many people?',s:'Counting everyone in the family',h:'<div class="q">How many are coming?</div><div class="n" data-from="1" data-to="4" data-ms="1200">1</div><div class="b tap" style="margin-top:auto">Next</div>'},
-{c:'Page 3: Veg or non-veg?',s:'The caterer gets the exact split',h:'<div class="q">How many eat veg?</div><div class="n" data-from="0" data-to="3" data-ms="1200">0</div><p style="text-align:center;margin:0">3 veg and 1 non-veg</p><div class="b tap" style="margin-top:auto">Next</div>'},
+{c:'Page 2: How many people?',s:'Counting everyone in the family',h:'<div class="q">How many are coming?</div><div class="n" data-from="1" data-to="4" data-ms="2000">1</div><div class="b tap" style="margin-top:auto">Next</div>'},
+{c:'Page 3: Veg or non-veg?',s:'The caterer gets the exact split',h:'<div class="q">How many eat veg?</div><div class="n" data-from="0" data-to="3" data-ms="2000">0</div><p style="text-align:center;margin:0">3 veg and 1 non-veg</p><div class="b tap" style="margin-top:auto">Next</div>'},
 {c:'Page 4: Arrival time',s:'Morning, afternoon, evening or exact time',h:'<div class="q">When will you arrive?</div><div class="b o">Morning</div><div class="b o">Afternoon</div><div class="b tap">Evening</div>'},
 {c:'The reply is saved ✓',s:'Plans changed? They just open the link again',h:'<div class="q">Thank you!</div><div class="ck">✓</div><div class="r"><span>Your reply is saved. The family can see it now.</span></div>'},
-{c:'The host sees the real number',s:'Example numbers, updated as guests reply',h:'<div class="hero"><b data-to="268" data-ms="1800">0</b>plates for the caterer</div><div class="tl"><div class="t" style="--c:var(--teal)"><b data-to="245">0</b>Coming</div><div class="t" style="--c:var(--gold)"><b data-to="40">0</b>Maybe</div><div class="t" style="--c:var(--red)"><b data-to="60">0</b>Not coming</div><div class="t" style="--c:var(--mute)"><b data-to="35">0</b>Waiting</div></div>'},
+{c:'The host sees the real number',s:'Example numbers, updated as guests reply',h:'<div class="hero"><b data-to="268" data-ms="3000">0</b>plates for the caterer</div><div class="tl"><div class="t" style="--c:var(--teal)"><b data-to="245">0</b>Coming</div><div class="t" style="--c:var(--gold)"><b data-to="40">0</b>Maybe</div><div class="t" style="--c:var(--red)"><b data-to="60">0</b>Not coming</div><div class="t" style="--c:var(--mute)"><b data-to="35">0</b>Waiting</div></div>'},
 {c:'See who has not replied yet',s:'Search by name or filter by status',h:'<div class="q">Guest list</div><div class="sr">🔍 Search name or number</div><div class="r"><span>Neha & family</span><span class="pill" style="background:var(--mute)">Waiting</span></div><div class="r"><span>Anita Bua</span><span class="pill" style="background:var(--mute)">Waiting</span></div><div class="r"><span>Ravi Uncle</span><span class="pill" style="background:var(--red)">Not coming</span></div>'},
+{t:'tc',big:'🍽️',h:'Cook for the right number.',p:'No wasted food. No last-minute panic.'},
 {t:'tc',big:'✔',h:'Know the real count. Save real money.',p:'Want it for your function? Contact us below 👇'}
 ];
-var T=3800,TOTAL=S.length*T,e=0,last=0,cur=-1,playing=true;
+var DUR=[6000,6500,6000,5500,7000,7000,6000,6500,6000,6500,6000,5500,8000,6500,5500,6000],START=[],TOTAL=0,e=0,last=0,cur=-1,playing=true;
+DUR.forEach(function(d){START.push(TOTAL);TOTAL+=d});
 var v=document.getElementById('v'),sk=document.getElementById('sk'),tm=document.getElementById('tm'),pp=document.getElementById('pp');
 var iv=document.getElementById('iv');iv.addEventListener('loadeddata',function(){document.getElementById('intro').hidden=false;document.getElementById('v').style.display='none';document.querySelector('.ctl').style.display='none';playing=false});
 sk.max=TOTAL-1;
@@ -144,7 +146,7 @@ function show(k){cur=k;var x=S[k];
  Array.prototype.forEach.call(v.querySelectorAll('[data-to]'),function(el){count(el)})}
 function tick(now){var dt=now-last;last=now;
  if(playing){e+=dt;if(e>=TOTAL)e=0}
- var k=Math.min(S.length-1,Math.floor(e/T));if(k!==cur)show(k);
+ var k=0;for(var j=0;j<START.length;j++){if(e>=START[j])k=j}if(k!==cur)show(k);
  sk.value=e;tm.textContent=fmt(e)+' / '+fmt(TOTAL);requestAnimationFrame(tick)}
 sk.oninput=function(){e=+sk.value};
 pp.onclick=function(){playing=!playing;pp.textContent=playing?'⏸ Pause':'▶ Play'};
