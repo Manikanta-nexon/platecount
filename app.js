@@ -37,6 +37,7 @@ async function showApp() {
   clearInterval(timer); timer = setInterval(loadGuests, 20000);
 }
 function showCreate() {
+  clearInterval(timer);
   $('app').innerHTML = `<div class="panel"><h2>Create your wedding</h2>
     <input id="wn" placeholder="For example: Anjali weds Rohan" style="margin-bottom:8px">
     <input id="wd" type="date" aria-label="Wedding date" style="margin-bottom:10px">
