@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plate Count – Flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mar:#5e0f2b;--gold:#f6a800;--gold2:#ffd36b;--cream:#fff6e6;--ink:#2b1119;--mute:#6f5a60;--green:#1fa55a}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e0d2;font-family:"Mulish",system-ui,sans-serif;font-weight:400;color:var(--ink);line-height:1.5;padding:16px}
+.tools{max-width:794px;margin:0 auto 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tools button{background:var(--mar);color:#fff;border:0;border-radius:10px;padding:12px 18px;font:600 15px "Mulish",sans-serif;cursor:pointer}
+.tools span{color:var(--mute);font-size:14px}
+.sheet{max-width:794px;margin:0 auto;background:var(--cream);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.head{background:var(--mar);color:#fff;padding:26px 36px 70px;position:relative;overflow:hidden}
+.head:after{content:"";position:absolute;right:-60px;top:-70px;width:230px;height:230px;border-radius:50%;background:#7a1a3b}
+.head>*{position:relative;z-index:1}
+.logo{font-family:"Marcellus",Georgia,serif;font-size:26px;color:var(--gold2)}.logo i{font-style:normal;color:var(--gold)}
+h1{font-family:"Marcellus",Georgia,serif;font-weight:400;font-size:clamp(34px,8vw,52px);line-height:1.08;margin:14px 0 12px}
+h1 em{font-style:normal;color:var(--gold)}
+.head p{margin:0;color:#f0cfd6;font-size:16px;max-width:520px}
+.qr{width:min(260px,70%);margin:-50px auto 0;background:#fff;border:3px solid var(--gold);border-radius:20px;padding:12px;position:relative;z-index:2}
+.qr svg{display:block;width:100%;height:auto}
+.scan{text-align:center;margin:16px 0 2px;font-size:20px;font-weight:600}
+.url{text-align:center;color:var(--mute);font-size:13px;margin:0 0 18px;word-break:break-all;padding:0 16px}
+ul{list-style:none;padding:0 36px;margin:0 auto 20px;max-width:640px}
+li{display:flex;gap:12px;align-items:flex-start;padding:7px 0;font-size:16px}
+li:before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;margin-top:1px}
+.price{background:var(--mar);color:#fff;border-radius:18px;margin:0 36px 22px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.price b{font-family:"Marcellus",Georgia,serif;font-weight:400;font-size:52px;line-height:1;color:var(--gold2)}
+.price div{font-size:16px}.price small{display:block;color:#f0cfd6;font-size:14px}
+.cta{text-align:center;padding:0 20px 28px}
+.cta p{margin:0 0 12px;font-size:17px;font-weight:600}
+.wa{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:20px;padding:14px 30px;border-radius:14px}
+.who{margin:14px 0 0;color:var(--mute);font-size:14px}
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff;padding:0}.tools{display:none}
+  .sheet{max-width:none;width:210mm;min-height:297mm;box-shadow:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style></head><body>
+<div class="tools"><button onclick="window.print()">Print / Save as PDF</button><span>Tip: in the print window, turn on “Background graphics”.</span></div>
+<div class="sheet">
+  <div class="head">
+    <div class="logo">Plate<i>Count</i></div>
+    <h1>Stop paying for guests who <em>never come.</em></h1>
+    <p>At many weddings, about a third of the plates go untouched. We show you who is really coming, before you pay the caterer.</p>
+  </div>
+  <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" role="img" aria-label="QR code that opens the Plate Count page"><rect width="100%" height="100%" fill="#fff"/><path fill="#2b1119" d="M2 2h7v1h-7zM12 2h1v1h-1zM15 2h1v1h-1zM17 2h6v1h-6zM25 2h1v1h-1zM28 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM14 3h2v1h-2zM17 3h4v1h-4zM22 3h1v1h-1zM24 3h3v1h-3zM28 3h1v1h-1zM34 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM10 4h1v1h-1zM12 4h2v1h-2zM15 4h1v1h-1zM17 4h1v1h-1zM20 4h2v1h-2zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM30 4h3v1h-3zM34 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM15 5h5v1h-5zM21 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM28 5h1v1h-1zM30 5h3v1h-3zM34 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM11 6h1v1h-1zM14 6h1v1h-1zM16 6h2v1h-2zM21 6h1v1h-1zM26 6h1v1h-1zM28 6h1v1h-1zM30 6h3v1h-3zM34 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h2v1h-2zM21 7h1v1h-1zM23 7h2v1h-2zM26 7h1v1h-1zM28 7h1v1h-1zM34 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM28 8h7v1h-7zM11 9h1v1h-1zM13 9h3v1h-3zM17 9h1v1h-1zM19 9h2v1h-2zM24 9h3v1h-3zM3 10h3v1h-3zM7 10h2v1h-2zM13 10h2v1h-2zM17 10h3v1h-3zM21 10h1v1h-1zM23 10h1v1h-1zM32 10h2v1h-2zM2 11h5v1h-5zM9 11h4v1h-4zM14 11h3v1h-3zM19 11h5v1h-5zM25 11h1v1h-1zM28 11h2v1h-2zM31 11h4v1h-4zM2 12h2v1h-2zM7 12h3v1h-3zM11 12h1v1h-1zM14 12h4v1h-4zM19 12h2v1h-2zM22 12h2v1h-2zM25 12h1v1h-1zM28 12h4v1h-4zM33 12h2v1h-2zM2 13h3v1h-3zM9 13h1v1h-1zM13 13h3v1h-3zM17 13h2v1h-2zM21 13h1v1h-1zM26 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM2 14h1v1h-1zM4 14h5v1h-5zM15 14h1v1h-1zM17 14h2v1h-2zM20 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM26 14h2v1h-2zM29 14h3v1h-3zM33 14h1v1h-1zM3 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM11 15h3v1h-3zM15 15h3v1h-3zM19 15h1v1h-1zM21 15h1v1h-1zM23 15h1v1h-1zM26 15h2v1h-2zM29 15h1v1h-1zM31 15h1v1h-1zM33 15h1v1h-1zM5 16h4v1h-4zM10 16h4v1h-4zM15 16h5v1h-5zM21 16h1v1h-1zM23 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM32 16h1v1h-1zM4 17h1v1h-1zM7 17h1v1h-1zM9 17h3v1h-3zM15 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM23 17h3v1h-3zM27 17h2v1h-2zM30 17h3v1h-3zM3 18h1v1h-1zM8 18h2v1h-2zM14 18h3v1h-3zM18 18h1v1h-1zM21 18h1v1h-1zM23 18h6v1h-6zM30 18h3v1h-3zM2 19h2v1h-2zM5 19h2v1h-2zM10 19h3v1h-3zM16 19h2v1h-2zM19 19h2v1h-2zM22 19h2v1h-2zM25 19h2v1h-2zM28 19h1v1h-1zM30 19h2v1h-2zM33 19h2v1h-2zM2 20h2v1h-2zM8 20h1v1h-1zM10 20h1v1h-1zM12 20h4v1h-4zM18 20h2v1h-2zM22 20h1v1h-1zM24 20h1v1h-1zM29 20h2v1h-2zM32 20h2v1h-2zM4 21h1v1h-1zM10 21h2v1h-2zM13 21h1v1h-1zM16 21h3v1h-3zM24 21h2v1h-2zM28 21h1v1h-1zM30 21h1v1h-1zM4 22h1v1h-1zM8 22h2v1h-2zM11 22h2v1h-2zM14 22h3v1h-3zM19 22h2v1h-2zM23 22h1v1h-1zM26 22h1v1h-1zM31 22h2v1h-2zM2 23h2v1h-2zM6 23h2v1h-2zM10 23h1v1h-1zM12 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM21 23h3v1h-3zM25 23h1v1h-1zM27 23h3v1h-3zM32 23h1v1h-1zM34 23h1v1h-1zM4 24h2v1h-2zM7 24h2v1h-2zM13 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM22 24h1v1h-1zM24 24h3v1h-3zM28 24h1v1h-1zM32 24h3v1h-3zM3 25h3v1h-3zM7 25h1v1h-1zM9 25h1v1h-1zM11 25h4v1h-4zM17 25h3v1h-3zM22 25h1v1h-1zM25 25h3v1h-3zM29 25h1v1h-1zM31 25h1v1h-1zM33 25h2v1h-2zM2 26h1v1h-1zM6 26h1v1h-1zM8 26h3v1h-3zM17 26h2v1h-2zM21 26h1v1h-1zM24 26h7v1h-7zM33 26h2v1h-2zM10 27h2v1h-2zM20 27h4v1h-4zM25 27h2v1h-2zM30 27h2v1h-2zM33 27h1v1h-1zM2 28h7v1h-7zM11 28h4v1h-4zM17 28h2v1h-2zM20 28h2v1h-2zM25 28h2v1h-2zM28 28h1v1h-1zM30 28h1v1h-1zM2 29h1v1h-1zM8 29h1v1h-1zM10 29h3v1h-3zM14 29h1v1h-1zM16 29h5v1h-5zM22 29h5v1h-5zM30 29h3v1h-3zM34 29h1v1h-1zM2 30h1v1h-1zM4 30h3v1h-3zM8 30h1v1h-1zM11 30h4v1h-4zM17 30h3v1h-3zM22 30h9v1h-9zM32 30h2v1h-2zM2 31h1v1h-1zM4 31h3v1h-3zM8 31h1v1h-1zM10 31h1v1h-1zM13 31h6v1h-6zM20 31h1v1h-1zM23 31h2v1h-2zM29 31h1v1h-1zM31 31h1v1h-1zM33 31h2v1h-2zM2 32h1v1h-1zM4 32h3v1h-3zM8 32h1v1h-1zM10 32h2v1h-2zM17 32h1v1h-1zM20 32h1v1h-1zM22 32h1v1h-1zM24 32h2v1h-2zM28 32h2v1h-2zM31 32h2v1h-2zM2 33h1v1h-1zM8 33h1v1h-1zM10 33h8v1h-8zM19 33h1v1h-1zM25 33h2v1h-2zM28 33h3v1h-3zM34 33h1v1h-1zM2 34h7v1h-7zM12 34h1v1h-1zM14 34h1v1h-1zM17 34h1v1h-1zM21 34h3v1h-3zM27 34h1v1h-1zM30 34h1v1h-1zM32 34h1v1h-1z"/></svg></div>
+  <div class="scan">Scan to see how it works</div>
+  <p class="url">platecount-phi.vercel.app/welcome.html</p>
+  <ul>
+    <li>Each family gets a personal WhatsApp link and replies in 20 seconds</li>
+    <li>See who is coming, how many, veg or non-veg, and arrival time</li>
+    <li>Live plate count and a caterer sheet, ready to share</li>
+  </ul>
+  <div class="price"><b>₹79</b><div>for every family invited (up to 4 members)<small>About ₹20 per person</small></div></div>
+  <div class="cta">
+    <p>Planning a wedding or function? Message us on WhatsApp</p>
+    <a class="wa" href="https://wa.me/916281238268" target="_blank" rel="noopener">+91 62812 38268</a>
+    <p class="who" style="font-weight:400">Manikanta, Founder · Goutham, Co-founder</p>
+  </div>
+</div>
+</body></html>
