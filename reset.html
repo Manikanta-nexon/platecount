@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New password – PlateCount</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#faf7f2;color:#2b2320;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:16px}
+.card{background:#fff;border:1px solid #e6ddd0;border-radius:14px;padding:24px;width:100%;max-width:380px}
+h1{font-size:22px;margin:0 0 6px}p{margin:0 0 16px;color:#6b5f55;font-size:14px;line-height:1.5}
+input{width:100%;padding:12px;font-size:16px;border:1px solid #cfc4b5;border-radius:8px;margin-bottom:12px}
+button{width:100%;padding:13px;font-size:16px;font-weight:600;border:0;border-radius:8px;background:#b4472f;color:#fff;cursor:pointer}
+button:disabled{opacity:.6}#msg{margin-top:14px;font-size:14px;line-height:1.5}.ok{color:#1d7a46}.err{color:#b3261e}a{color:#b4472f}
+</style>
+</head><body>
+<div class="card">
+<h1>Set a new password</h1>
+<p>Use at least 8 characters. Write it down in your phone notes.</p>
+<input id="p1" type="password" placeholder="new password" autocomplete="new-password">
+<input id="p2" type="password" placeholder="type it again" autocomplete="new-password">
+<button id="go">Save new password</button>
+<div id="msg"></div>
+<p style="margin-top:16px"><a href="/">Go to login</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+const sb = supabase.createClient("https://jqfbxkcfzzahgrkwxmnx.supabase.co","sb_publishable_Tezkb12thQt6yoFxrJa3Rw_pPh-W_Bu");
+const msg=document.getElementById("msg"),btn=document.getElementById("go");
+btn.onclick=async()=>{
+  const a=document.getElementById("p1").value,b=document.getElementById("p2").value;
+  if(a.length<8){msg.className="err";msg.textContent="Password must be at least 8 characters.";return;}
+  if(a!==b){msg.className="err";msg.textContent="The two passwords do not match.";return;}
+  btn.disabled=true;msg.className="";msg.textContent="Saving...";
+  const {error}=await sb.auth.updateUser({password:a});
+  btn.disabled=false;
+  if(error){msg.className="err";msg.textContent="Could not save: "+error.message+" (open the link from your email again if it expired)";}
+  else{msg.className="ok";msg.textContent="Password changed. Taking you to login...";setTimeout(()=>location.href="/",1500);}
+};
+</script>
+</body></html>
